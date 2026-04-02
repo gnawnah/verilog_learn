@@ -1,0 +1,59 @@
+#! /opt/homebrew/Cellar/icarus-verilog/13.0/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
+S_0x1046d87c0 .scope module, "function_example" "function_example" 2 1;
+ .timescale 0 0;
+v0x1046ddd00_0 .var "r_Bit1", 0 0;
+v0x1046ddda0_0 .var "r_Bit2", 0 0;
+v0x1046dde40_0 .var "r_Bit3", 0 0;
+v0x1046ddee0_0 .var "r_Global", 0 0;
+v0x1046ddf80_0 .net "w_Result", 0 0, L_0x1046de020;  1 drivers
+L_0x1046de020 .ufunc/vec4 TD_function_example.do_math, 1, v0x1046ddd00_0, v0x1046ddda0_0, v0x1046dde40_0 (v0x1046dda70_0, v0x1046ddb20_0, v0x1046ddbc0_0) S_0x1046dd640;
+S_0x1046dd640 .scope function.vec4.s1, "do_math" "do_math" 2 8, 2 8 0, S_0x1046d87c0;
+ .timescale 0 0;
+; Variable do_math is vec4 return value of scope S_0x1046dd640
+v0x1046dda70_0 .var "i_bit1", 0 0;
+v0x1046ddb20_0 .var "i_bit2", 0 0;
+v0x1046ddbc0_0 .var "i_bit3", 0 0;
+v0x1046ddc60_0 .var "v_Temp", 0 0;
+TD_function_example.do_math ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1046ddee0_0, 0, 1;
+    %load/vec4 v0x1046dda70_0;
+    %load/vec4 v0x1046ddb20_0;
+    %and;
+    %store/vec4 v0x1046ddc60_0, 0, 1;
+    %load/vec4 v0x1046ddc60_0;
+    %load/vec4 v0x1046ddbc0_0;
+    %or;
+    %ret/vec4 0, 0, 1;  Assign to do_math (store_vec4_to_lval)
+    %end;
+    .scope S_0x1046d87c0;
+T_1 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1046ddd00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x1046ddda0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x1046dde40_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x1046d87c0;
+T_2 ;
+    %vpi_call 2 26 "$dumpfile", "function.vcd" {0 0 0};
+    %vpi_call 2 27 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x1046d87c0 {0 0 0};
+    %delay 200, 0;
+    %vpi_call 2 29 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "function.v";

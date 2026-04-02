@@ -1,0 +1,20 @@
+$date
+	Wed Mar 25 15:04:24 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module reduction_operators $end
+$var reg 1 ! r_C $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#10
+$dumpvars
+1!
+$end

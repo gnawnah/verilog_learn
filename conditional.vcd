@@ -1,0 +1,23 @@
+$date
+	Sat Mar 21 16:36:27 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test2 $end
+$var wire 1 ! w_Test1 $end
+$var reg 1 " r_Check $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1"
+1!
+$end
+#1

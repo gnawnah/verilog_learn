@@ -1,0 +1,23 @@
+$date
+	Wed Mar 25 14:44:05 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module function_auto $end
+$scope function factorial $end
+$var reg 4 ! i_Num [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 !
+$end
+#10

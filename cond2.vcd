@@ -1,0 +1,30 @@
+$date
+	Sat Mar 21 16:51:55 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test3 $end
+$var wire 1 ! w_Out $end
+$var reg 2 " r_Sel [1:0] $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 "
+1!
+$end
+#1
+b1 "
+#2
+b10 "
+#3
+0!
+b11 "
+#4

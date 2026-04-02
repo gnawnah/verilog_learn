@@ -1,0 +1,43 @@
+$date
+	Thu Mar 26 19:29:58 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module task_tb $end
+$var reg 8 ! i_addr [7:0] $end
+$var reg 8 " i_data [7:0] $end
+$scope module uut $end
+$var reg 1 # r_Addr_Valid $end
+$var reg 1 $ r_Data_Valid $end
+$var reg 8 % r_Mux_Addr_Data [7:0] $end
+$scope task do_write $end
+$var reg 8 & i_addr [7:0] $end
+$var reg 8 ' i_data [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b110100 '
+b10010 &
+b10010 %
+0$
+1#
+b110100 "
+b10010 !
+$end
+#10
+b110100 %
+1$
+0#
+#20
+0$
+#40

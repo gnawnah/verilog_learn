@@ -1,0 +1,22 @@
+$date
+	Thu Mar 26 10:38:31 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module replication_operator $end
+$var parameter 4 ! c_MULTIPLIER $end
+$var reg 4 " r_VAL_1 [3:0] $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b10 !
+$end
+#0
+$dumpvars
+b111 "
+$end

@@ -1,0 +1,23 @@
+$date
+	Wed Mar 25 14:50:07 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module logical_operators $end
+$var reg 1 ! r_A $end
+$var reg 1 " r_B $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0"
+1!
+$end
+#10

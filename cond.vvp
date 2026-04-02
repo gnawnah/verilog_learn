@@ -1,0 +1,56 @@
+#! /opt/homebrew/Cellar/icarus-verilog/13.0/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
+S_0x101164720 .scope module, "test2" "test2" 2 2;
+ .timescale 0 0;
+L_0x80f054010 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x1011648a0_0 .net/2u *"_ivl_0", 0 0, L_0x80f054010;  1 drivers
+L_0x80f054058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x101169ce0_0 .net/2u *"_ivl_2", 0 0, L_0x80f054058;  1 drivers
+v0x101169d90_0 .var "r_Check", 0 0;
+v0x101169e30_0 .net "w_Test1", 0 0, L_0x101169f10;  1 drivers
+L_0x101169f10 .functor MUXZ 1, L_0x80f054058, L_0x80f054010, v0x101169d90_0, C4<>;
+    .scope S_0x101164720;
+T_0 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x101169d90_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0x101164720;
+T_1 ;
+    %vpi_call 2 9 "$dumpfile", "conditional.vcd" {0 0 0};
+    %vpi_call 2 10 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x101164720 {0 0 0};
+    %delay 1, 0;
+    %load/vec4 v0x101169d90_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_1.0, 8;
+    %pushi/vec4 1212751956, 0, 32; draw_string_vec4
+    %pushi/vec4 1212502597, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.1, 8;
+T_1.0 ; End of true expr.
+    %pushi/vec4 20559, 0, 32; draw_string_vec4
+    %pushi/vec4 1413567567, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/0 T_1.1, 8;
+ ; End of false expr.
+    %blend;
+T_1.1;
+    %vpi_call 2 12 "$display", "OUTPUT: %s", S<0,vec4,u64> {1 0 0};
+    %vpi_call 2 13 "$display", "Value of w_Test1: %b", v0x101169e30_0 {0 0 0};
+    %vpi_call 2 14 "$display", "%h", 16'b1010101111001101 {0 0 0};
+    %vpi_call 2 15 "$display", "%s", "\000YES, ONE EQUALS ONE" {0 0 0};
+    %vpi_call 2 17 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "conditional.v";

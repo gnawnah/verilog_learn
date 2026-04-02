@@ -1,0 +1,39 @@
+$date
+	Wed Mar 25 14:28:37 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module function_example $end
+$var wire 1 ! w_Result $end
+$var reg 1 " r_Bit1 $end
+$var reg 1 # r_Bit2 $end
+$var reg 1 $ r_Bit3 $end
+$var reg 1 % r_Global $end
+$scope function do_math $end
+$var reg 1 & i_bit1 $end
+$var reg 1 ' i_bit2 $end
+$var reg 1 ( i_bit3 $end
+$var reg 1 ) v_Temp $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0)
+1(
+0'
+1&
+1%
+1$
+0#
+1"
+1!
+$end
+#200

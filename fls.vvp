@@ -1,0 +1,51 @@
+#! /opt/homebrew/Cellar/icarus-verilog/13.0/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
+S_0x102f73fe0 .scope module, "for_loop_simulation" "for_loop_simulation" 2 1;
+ .timescale 0 0;
+v0x102f6e9f0_0 .var/i "ii", 31 0;
+v0x102f74180 .array "r_Data", 0 5, 7 0;
+    .scope S_0x102f73fe0;
+T_0 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x102f6e9f0_0, 0, 32;
+    %end;
+    .thread T_0;
+    .scope S_0x102f73fe0;
+T_1 ;
+    %vpi_call 2 7 "$dumpfile", "forloopsim.vcd" {0 0 0};
+    %vpi_call 2 8 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x102f73fe0 {0 0 0};
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x102f6e9f0_0, 0, 32;
+T_1.0 ; Top of for-loop
+    %load/vec4 v0x102f6e9f0_0;
+    %cmpi/s 6, 0, 32;
+	  %jmp/0xz T_1.1, 5;
+    %load/vec4 v0x102f6e9f0_0;
+    %load/vec4 v0x102f6e9f0_0;
+    %mul;
+    %pad/s 8;
+    %ix/getv/s 4, v0x102f6e9f0_0;
+    %store/vec4a v0x102f74180, 4, 0;
+    %vpi_call 2 12 "$display", "Time %2d: r_Data at Index %1d is %2d", $time, v0x102f6e9f0_0, &A<v0x102f74180, v0x102f6e9f0_0 > {0 0 0};
+    %delay 10, 0;
+T_1.2 ; for-loop step statement
+    %load/vec4 v0x102f6e9f0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x102f6e9f0_0, 0, 32;
+    %jmp T_1.0;
+T_1.1 ; for-loop exit label
+    %vpi_call 2 15 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "forloopsim.v";

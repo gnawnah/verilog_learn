@@ -1,0 +1,38 @@
+#! /opt/homebrew/Cellar/icarus-verilog/13.0/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
+S_0x104423e80 .scope module, "replication_operator" "replication_operator" 2 2;
+ .timescale 0 0;
+P_0x942c14080 .param/l "c_MULTIPLIER" 0 2 6, C4<0010>;
+v0x104424000_0 .var "r_VAL_1", 3 0;
+    .scope S_0x104423e80;
+T_0 ;
+    %pushi/vec4 7, 0, 4;
+    %store/vec4 v0x104424000_0, 0, 4;
+    %end;
+    .thread T_0;
+    .scope S_0x104423e80;
+T_1 ;
+    %vpi_call 2 10 "$dumpfile", "replication.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x104423e80 {0 0 0};
+    %load/vec4 v0x104424000_0;
+    %replicate 3;
+    %vpi_call 2 13 "$display", "Replication of 0x7, 3 times is 0x%h", S<0,vec4,u12> {1 0 0};
+    %load/vec4 v0x104424000_0;
+    %replicate 2;
+    %vpi_call 2 15 "$display", "Replication of 0x7, %1d times is 0x%h", P_0x942c14080, S<0,vec4,u8> {1 0 0};
+    %vpi_call 2 17 "$display", "Concatenate 4 with replication of 0xA twice: 0x%h", 12'b010010101010 {0 0 0};
+    %vpi_call 2 19 "$display", "Replicate the concatenation of 0xB and 0xC 4 times: 0x%h", 32'b10111011101110111100110011001100 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "replication.v";

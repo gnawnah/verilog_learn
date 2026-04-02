@@ -1,0 +1,85 @@
+$date
+	Sat Mar 21 17:14:47 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module for_loop_synthesis_tb $end
+$var reg 1 ! r_Clock $end
+$scope module UUT $end
+$var wire 1 ! i_Clock $end
+$var reg 4 " r_Shift_Regular [3:0] $end
+$var reg 4 # r_Shift_With_For [3:0] $end
+$var integer 32 $ ii [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 $
+b1 #
+b1 "
+0!
+$end
+#10000
+b11 #
+b11 "
+b11 $
+1!
+#20000
+0!
+#30000
+b111 "
+b111 #
+b11 $
+1!
+#40000
+0!
+#50000
+b1111 #
+b1111 "
+b11 $
+1!
+#60000
+0!
+#70000
+b11 $
+1!
+#80000
+0!
+#90000
+b11 $
+1!
+#100000
+0!
+#110000
+b11 $
+1!
+#120000
+0!
+#130000
+b11 $
+1!
+#140000
+0!
+#150000
+b11 $
+1!
+#160000
+0!
+#170000
+b11 $
+1!
+#180000
+0!
+#190000
+b11 $
+1!
+#200000
+0!
